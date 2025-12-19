@@ -16,16 +16,15 @@
       min-height: 100vh;
       padding: 40px 20px;
       box-sizing: border-box;
-    }
-    .screen.active { display: block; }
-    h1, h2, h3 { color: #7CFF9E; }
-    .center {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
       text-align: center;
     }
+    .screen.active { display: flex; }
+    h1, h2, h3 { color: #7CFF9E; }
     button {
       margin-top: 25px;
       padding: 14px 22px;
@@ -41,26 +40,27 @@
       padding: 16px;
       margin: 15px 0;
       cursor: pointer;
+      width: 90%;
+      max-width: 500px;
     }
     .details { display: none; margin-top: 10px; color: #cfeacf; }
-    .toggle { margin-top: 10px; }
     .footer { margin-top: 40px; opacity: 0.7; }
   </style>
 </head>
 <body>
 
 <!-- SCREEN 1 -->
-<div id="screen1" class="screen active center">
+<div id="screen1" class="screen active">
   <h1>CLASSIFIED MISSION</h1>
   <p>Unauthorized access is prohibited.</p>
-<button id="startBtn">BEGIN MISSION BRIEFING</button>
+  <button id="startBtn">BEGIN MISSION BRIEFING</button>
 </div>
 
 <!-- SCREEN 2 -->
-<div id="screen2" class="screen center">
+<div id="screen2" class="screen">
   <h2>AGENT VERIFICATION</h2>
   <p>Tap to verify identity.</p>
-  <button onclick="nextScreen(3)">VERIFY AGENT</button>
+  <button id="verifyBtn">VERIFY AGENT</button>
   <p class="footer">ACCESS GRANTED, AGENT</p>
 </div>
 
@@ -75,7 +75,7 @@
     <li>📅 Travel window: Summer, December, or Spring Break</li>
     <li>🍽 Focus on food, relaxing, light adventure</li>
   </ul>
-  <button onclick="nextScreen(4)">VIEW DESTINATION DOSSIERS</button>
+  <button id="toDossiersBtn">VIEW DESTINATION DOSSIERS</button>
 </div>
 
 <!-- SCREEN 4 -->
@@ -127,20 +127,19 @@
     </div>
   </div>
 
-  <button onclick="nextScreen(5)">FINAL DECISION</button>
+  <button id="toFinalBtn">FINAL DECISION</button>
 </div>
 
 <!-- SCREEN 5 -->
-<div id="screen5" class="screen center">
+<div id="screen5" class="screen">
   <h2>FINAL DECISION</h2>
   <p>The final decision is yours, Agent.</p>
-  <button onclick="acceptMission()">ACCEPT MISSION</button>
+  <button id="acceptBtn">ACCEPT MISSION</button>
   <p id="finalMsg" class="footer"></p>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   function showScreen(n) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('screen' + n).classList.add('active');
@@ -150,19 +149,24 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('startBtn').addEventListener('click', function () {
     showScreen(2);
   });
-
-  window.nextScreen = showScreen;
+  document.getElementById('verifyBtn').addEventListener('click', function () {
+    showScreen(3);
+  });
+  document.getElementById('toDossiersBtn').addEventListener('click', function () {
+    showScreen(4);
+  });
+  document.getElementById('toFinalBtn').addEventListener('click', function () {
+    showScreen(5);
+  });
+  document.getElementById('acceptBtn').addEventListener('click', function () {
+    document.getElementById('finalMsg').innerText =
+      'Mission accepted. Your handler will take care of everything.';
+  });
 
   window.toggle = function(card) {
     const d = card.querySelector('.details');
     d.style.display = d.style.display === 'block' ? 'none' : 'block';
   };
-
-  window.acceptMission = function() {
-    document.getElementById('finalMsg').innerText =
-      'Mission accepted. Your handler will take care of everything.';
-  };
-
 });
 </script>
 
