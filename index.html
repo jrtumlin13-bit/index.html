@@ -622,8 +622,115 @@
                 <p style="margin-top: 10px;"><span class="detail-label">BUDGET:</span> $550-710 total (MOST AFFORDABLE!)</p>
             </div>
 
-            <div class="itinerary-section">
-                <p class="detail-label">SAMPLE SPRING MOUNTAIN ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/mountain1/400/300" alt="Arrival" class="option-image">
-                    <div class="option-details">
+            <button class="btn" onclick="goToScreen(8)">SELECT A SPRING DESTINATION</button>
+        </div>
+    </div>
+
+    <!-- Screen 8: Final Decision -->
+    <div id="screen8" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <div class="classified-header">
+            <h2>MISSION DECISION</h2>
+            <p class="subtitle">/// AWAITING CONFIRMATION ///</p>
+        </div>
+        <div class="content-box">
+            <p class="mission-text" style="text-align: center; font-size: 1.2em;">
+                You have reviewed all available intelligence, Agent.
+            </p>
+            <p class="mission-text" style="text-align: center;">
+                The final decision is yours. Choose the destination that calls to you, and we will execute this mission together.
+            </p>
+            <p style="text-align: center; color: #888; margin-top: 20px;">
+                Remember: There are no wrong choices, only adventures waiting to happen.
+            </p>
+        </div>
+        <button class="btn" onclick="acceptMission()">ACCEPT MISSION</button>
+        <div id="finalMessage" class="final-message">
+            <h2>MISSION ACCEPTED!</h2>
+            <p style="font-size: 1.1em; margin-top: 15px;">
+                Excellent work, Agent. Your decision has been logged and the operation is now in motion.
+            </p>
+            <p style="color: #ffbf00; margin-top: 20px; font-size: 1.2em;">
+                Let's make some unforgettable memories together! ❤️
+            </p>
+            <p style="color: #888; margin-top: 20px; font-size: 0.9em;">
+                /// THIS MESSAGE WILL SELF-DESTRUCT... NEVER ///
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        let matrixInterval;
+
+        function goToScreen(screenNumber) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            document.getElementById('screen' + screenNumber).classList.add('active');
+            
+            // Activate matrix only on screen 1
+            if (screenNumber === 1) {
+                canvas.classList.add('active');
+                if (!matrixInterval) {
+                    matrixInterval = setInterval(drawMatrix, 33);
+                }
+            } else {
+                canvas.classList.remove('active');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function acceptMission() {
+            const message = document.getElementById('finalMessage');
+            message.classList.add('show');
+        }
+
+        // Start matrix on load
+        window.addEventListener('load', () => {
+            matrixInterval = setInterval(drawMatrix, 33);
+            setTimeout(() => {
+                canvas.classList.add('active');
+            }, 500);
+        });
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
