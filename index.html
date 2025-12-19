@@ -19,6 +19,21 @@
             overflow-x: hidden;
         }
 
+        #matrixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #matrixCanvas.active {
+            opacity: 0.15;
+        }
+
         .screen {
             display: none;
             min-height: 100vh;
@@ -36,6 +51,28 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 255, 65, 0.2);
+            color: #00ff41;
+            border: 2px solid #00ff41;
+            padding: 10px 20px;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background: #00ff41;
+            color: #0a0a0a;
+            transform: scale(1.05);
         }
 
         .classified-header {
@@ -88,10 +125,6 @@
             box-shadow: 0 0 25px rgba(255, 191, 0, 0.7);
         }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
-
         .content-box {
             max-width: 800px;
             background: rgba(0, 0, 0, 0.7);
@@ -106,83 +139,104 @@
             margin-bottom: 20px;
         }
 
-        .constraints {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .constraints li {
-            padding: 10px;
-            margin: 10px 0;
-            background: rgba(0, 255, 65, 0.1);
-            border-left: 4px solid #ffbf00;
-        }
-
-        .dossier-grid {
+        .season-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            max-width: 1200px;
+            max-width: 900px;
             width: 100%;
             padding: 20px;
         }
 
-        .dossier-card {
+        .season-card {
             background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #00ff41;
-            padding: 20px;
+            border: 3px solid #00ff41;
+            padding: 30px 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
+            text-align: center;
         }
 
-        .dossier-card:hover {
+        .season-card:hover {
             border-color: #ffbf00;
-            box-shadow: 0 0 20px rgba(255, 191, 0, 0.5);
-            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 191, 0, 0.6);
+            transform: translateY(-8px);
         }
 
-        .dossier-card h3 {
+        .season-card h3 {
             color: #ffbf00;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .destination-page {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .destination-hero {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border: 3px solid #00ff41;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff41;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .info-section h3 {
+            color: #ffbf00;
+            font-size: 1.5em;
             margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .dossier-details {
-            display: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #00ff41;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .dossier-details.show {
-            display: block;
-            animation: slideDown 0.4s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                max-height: 0;
-            }
-            to {
-                opacity: 1;
-                max-height: 500px;
-            }
-        }
-
-        .dossier-summary {
-            color: #aaa;
-            font-size: 0.9em;
-            margin-top: 10px;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
         }
 
         .detail-label {
             color: #ffbf00;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        .lodging-section, .itinerary-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 255, 65, 0.05);
+            border-left: 3px solid #ffbf00;
+        }
+
+        .lodging-option, .itinerary-option {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+        }
+
+        .option-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 1px solid #00ff41;
+            flex-shrink: 0;
+        }
+
+        .option-details h4 {
+            color: #ffbf00;
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .option-details p {
+            font-size: 0.85em;
+            color: #aaa;
         }
 
         .final-message {
@@ -193,47 +247,26 @@
             background: rgba(0, 255, 65, 0.1);
             border: 3px solid #ffbf00;
             margin-top: 30px;
-            animation: fadeIn 1s ease;
         }
 
         .final-message.show {
             display: block;
-        }
-
-        .final-message h2 {
-            color: #00ff41;
-            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-                letter-spacing: 4px;
-            }
-
-            h2 {
-                font-size: 1.4em;
-                letter-spacing: 2px;
-            }
-
-            .content-box {
-                padding: 20px;
-                margin: 10px;
-            }
-
-            .dossier-grid {
-                grid-template-columns: 1fr;
-                padding: 10px;
-            }
-
-            .btn {
-                padding: 12px 30px;
-                font-size: 1em;
-            }
+            h1 { font-size: 1.8em; letter-spacing: 4px; }
+            h2 { font-size: 1.4em; letter-spacing: 2px; }
+            .back-btn { top: 10px; left: 10px; padding: 8px 15px; font-size: 0.8em; }
+            .destination-hero { height: 200px; }
+            .lodging-option, .itinerary-option { flex-direction: column; }
+            .option-image { width: 100%; height: 150px; }
         }
     </style>
 </head>
 <body>
+    <canvas id="matrixCanvas"></canvas>
+
     <!-- Screen 1: Landing -->
     <div id="screen1" class="screen active">
         <div class="classified-header">
@@ -245,6 +278,7 @@
 
     <!-- Screen 2: Agent Verification -->
     <div id="screen2" class="screen">
+        <button class="back-btn" onclick="goToScreen(1)">← BACK</button>
         <div class="classified-header">
             <h2>AGENT VERIFICATION</h2>
             <p class="subtitle">/// IDENTITY CONFIRMED ///</p>
@@ -254,153 +288,342 @@
                 ACCESS GRANTED, AGENT
             </p>
             <p style="text-align: center; color: #888;">
-                Your credentials have been verified. You are cleared for the mission briefing.
+                Your credentials have been verified. You are cleared for mission parameters.
             </p>
         </div>
-        <button class="btn" onclick="goToScreen(3)">VERIFY AGENT</button>
+        <button class="btn" onclick="goToScreen(3)">PROCEED TO SEASON SELECTION</button>
     </div>
 
-    <!-- Screen 3: Mission Briefing -->
+    <!-- Screen 3: Season Selection -->
     <div id="screen3" class="screen">
+        <button class="back-btn" onclick="goToScreen(2)">← BACK</button>
         <div class="classified-header">
-            <h2>MISSION BRIEFING</h2>
-            <p class="subtitle">/// OPERATION: VACATION ///</p>
+            <h2>SELECT MISSION SEASON</h2>
+            <p class="subtitle">/// CHOOSE YOUR DEPLOYMENT WINDOW ///</p>
         </div>
-        <div class="content-box">
-            <p class="mission-text">
-                <strong>MISSION OBJECTIVE:</strong> Your mission, should you choose to accept it, is to select our next vacation destination. This is a critical operation requiring careful consideration and expert decision-making.
-            </p>
-            <p class="mission-text">
-                <strong>MISSION PARAMETERS:</strong>
-            </p>
-            <ul class="constraints">
-                <li><strong>Duration:</strong> 3-4 nights</li>
-                <li><strong>Budget Status:</strong> Budget-conscious operation</li>
-                <li><strong>Departure Point:</strong> Birmingham, Alabama</li>
-                <li><strong>Travel Window:</strong> Summer, December, or Spring Break</li>
-                <li><strong>Mission Focus:</strong> Food, relaxation, and light adventure activities</li>
-            </ul>
-            <p class="mission-text" style="color: #ffbf00;">
-                Five destination dossiers have been prepared for your review. Study them carefully before making your final decision.
-            </p>
-        </div>
-        <button class="btn" onclick="goToScreen(4)">VIEW DESTINATION DOSSIERS</button>
-    </div>
-
-    <!-- Screen 4: Destination Dossiers -->
-    <div id="screen4" class="screen">
-        <div class="classified-header">
-            <h2>DESTINATION DOSSIERS</h2>
-            <p class="subtitle">/// CLICK TO EXPAND ///</p>
-        </div>
-        <div class="dossier-grid">
-            <div class="dossier-card" onclick="toggleDossier(1)">
-                <h3>DOSSIER #1: GULF SHORES</h3>
-                <p class="dossier-summary">Orange Beach, Alabama</p>
-                <div id="dossier1" class="dossier-details">
-                    <p><span class="detail-label">LOCATION:</span> Gulf Coast of Alabama</p>
-                    <p><span class="detail-label">DESCRIPTION:</span> White sand beaches, fresh seafood, and laid-back coastal vibes. Perfect for beach relaxation with excellent dining options including The Gulf and Fishers restaurants.</p>
-                    <p><span class="detail-label">ACTIVITIES:</span> Beach lounging, dolphin cruises, Gulf State Park trails, beach volleyball, sunset watching, seafood feasting</p>
-                    <p><span class="detail-label">BEST VALUE SEASON:</span> Late April-May or September-October (shoulder season, warm weather, lower prices)</p>
-                </div>
-            </div>
-
-            <div class="dossier-card" onclick="toggleDossier(2)">
-                <h3>DOSSIER #2: CHATTANOOGA</h3>
-                <p class="dossier-summary">Tennessee</p>
-                <div id="dossier2" class="dossier-details">
-                    <p><span class="detail-label">LOCATION:</span> Southeastern Tennessee</p>
-                    <p><span class="detail-label">DESCRIPTION:</span> Mountain town with riverfront charm, thriving food scene, and excellent breweries. Mix of outdoor adventure and urban exploration.</p>
-                    <p><span class="detail-label">ACTIVITIES:</span> Tennessee Aquarium, Rock City, Ruby Falls, Lookout Mountain, riverside walks, downtown dining, craft beer tours</p>
-                    <p><span class="detail-label">BEST VALUE SEASON:</span> November-early December or March (mild weather, fewer crowds, off-peak pricing)</p>
-                </div>
-            </div>
-
-            <div class="dossier-card" onclick="toggleDossier(3)">
-                <h3>DOSSIER #3: BLUE RIDGE</h3>
-                <p class="dossier-summary">Georgia</p>
-                <div id="dossier3" class="dossier-details">
-                    <p><span class="detail-label">LOCATION:</span> North Georgia Mountains</p>
-                    <p><span class="detail-label">DESCRIPTION:</span> Charming mountain town with antique shops, local wineries, and scenic mountain views. Perfect for relaxation with a touch of adventure.</p>
-                    <p><span class="detail-label">ACTIVITIES:</span> Blue Ridge Scenic Railway, hiking trails, downtown shopping, wine tasting, waterfall hikes, cabin stays with mountain views</p>
-                    <p><span class="detail-label">BEST VALUE SEASON:</span> Late November-early December or mid-March to April (post-fall colors, pre-summer, better rates)</p>
-                </div>
-            </div>
-
-            <div class="dossier-card" onclick="toggleDossier(4)">
-                <h3>DOSSIER #4: MENTONE</h3>
-                <p class="dossier-summary">Lookout Mountain, Alabama</p>
-                <div id="dossier4" class="dossier-details">
-                    <p><span class="detail-label">LOCATION:</span> Lookout Mountain plateau, Alabama</p>
-                    <p><span class="detail-label">DESCRIPTION:</span> Quiet mountain retreat with stunning views, waterfalls, and local charm. Alabama's hidden gem for peaceful getaways.</p>
-                    <p><span class="detail-label">ACTIVITIES:</span> DeSoto Falls, Little River Canyon, downtown Mentone shops, hiking, scenic drives, cozy cabin dining</p>
-                    <p><span class="detail-label">BEST VALUE SEASON:</span> March-April or November (beautiful weather, minimal crowds, best cabin deals)</p>
-                </div>
-            </div>
-
-            <div class="dossier-card" onclick="toggleDossier(5)">
-                <h3>DOSSIER #5: FAIRHOPE</h3>
-                <p class="dossier-summary">Alabama</p>
-                <div id="dossier5" class="dossier-details">
-                    <p><span class="detail-label">LOCATION:</span> Eastern Shore of Mobile Bay</p>
-                    <p><span class="detail-label">DESCRIPTION:</span> Artistic coastal town with tree-lined streets, bay views, and exceptional restaurants. Perfect blend of art, food, and relaxation.</p>
-                    <p><span class="detail-label">ACTIVITIES:</span> Downtown art galleries, Fairhope Pier, boutique shopping, bay sunsets, farm-to-table dining, nearby beaches</p>
-                    <p><span class="detail-label">BEST VALUE SEASON:</span> September-October or March-April (pleasant weather, fewer tourists, better rates)</p>
-                </div>
-            </div>
-        </div>
-        <button class="btn" onclick="goToScreen(5)">PROCEED TO FINAL DECISION</button>
-    </div>
-
-    <!-- Screen 5: Final Decision -->
-    <div id="screen5" class="screen">
-        <div class="classified-header">
-            <h2>MISSION DECISION</h2>
-            <p class="subtitle">/// AWAITING CONFIRMATION ///</p>
-        </div>
-        <div class="content-box">
-            <p class="mission-text" style="text-align: center; font-size: 1.2em;">
-                You have reviewed all available intelligence, Agent.
-            </p>
+        <div class="content-box" style="margin-bottom: 30px;">
             <p class="mission-text" style="text-align: center;">
-                The final decision is yours. Choose the destination that calls to you, and we will execute this mission together.
+                Each season offers unique operational advantages. Select your preferred timeframe to view destinations optimized for that season.
             </p>
-            <p style="text-align: center; color: #888; margin-top: 20px;">
-                Remember: There are no wrong choices, only adventures waiting to happen.
+            <p style="text-align: center; color: #888; margin-top: 15px; font-size: 0.95em;">
+                <strong>Mission Parameters:</strong> 3-4 nights | $800 budget | From Birmingham, AL
             </p>
         </div>
-        <button class="btn" onclick="acceptMission()">ACCEPT MISSION</button>
-        <div id="finalMessage" class="final-message">
-            <h2>MISSION ACCEPTED!</h2>
-            <p style="font-size: 1.1em; margin-top: 15px;">
-                Excellent work, Agent. Your decision has been logged and the operation is now in motion.
-            </p>
-            <p style="color: #ffbf00; margin-top: 20px; font-size: 1.2em;">
-                Let's make some unforgettable memories together! ❤️
-            </p>
-            <p style="color: #888; margin-top: 20px; font-size: 0.9em;">
-                /// THIS MESSAGE WILL SELF-DESTRUCT... NEVER ///
-            </p>
+        <div class="season-grid">
+            <div class="season-card" onclick="goToScreen(4)">
+                <h3>☀️ SUMMER</h3>
+                <p>Beach Operations</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Jun-Aug</p>
+            </div>
+            <div class="season-card" onclick="goToScreen(5)">
+                <h3>🍂 FALL</h3>
+                <p>Coastal Missions</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Sep-Nov</p>
+            </div>
+            <div class="season-card" onclick="goToScreen(6)">
+                <h3>❄️ WINTER</h3>
+                <p>Mountain Retreats</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Dec-Feb</p>
+            </div>
+            <div class="season-card" onclick="goToScreen(7)">
+                <h3>🌸 SPRING</h3>
+                <p>Mountain & Valley</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Mar-May</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        function goToScreen(screenNumber) {
-            const screens = document.querySelectorAll('.screen');
-            screens.forEach(screen => screen.classList.remove('active'));
-            document.getElementById('screen' + screenNumber).classList.add('active');
-            window.scrollTo(0, 0);
-        }
+    <!-- Screen 4: Summer - Gulf Shores -->
+    <div id="screen4" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <div class="destination-page">
+            <div class="classified-header">
+                <h2>☀️ SUMMER: GULF SHORES</h2>
+                <p class="subtitle">/// ORANGE BEACH, ALABAMA ///</p>
+            </div>
+            
+            <img src="https://picsum.photos/seed/beach1/1000/300" alt="Gulf Shores Beach" class="destination-hero">
+            
+            <div class="info-section">
+                <h3>MISSION OVERVIEW</h3>
+                <p><span class="detail-label">LOCATION:</span> Gulf Coast of Alabama (2.5 hours from Birmingham)</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Summer (June-August) for peak beach weather</p>
+                <p style="margin-top: 15px;">White sand beaches, fresh seafood, and laid-back coastal vibes. Perfect for beach relaxation with excellent dining options including The Gulf and Fishers restaurants.</p>
+            </div>
 
-        function toggleDossier(dossierNumber) {
-            const dossier = document.getElementById('dossier' + dossierNumber);
-            dossier.classList.toggle('show');
-        }
+            <div class="info-section">
+                <h3>ACTIVITIES & INTEL</h3>
+                <p>🏖️ Beach lounging & swimming<br>
+                🐬 Dolphin cruises ($30-40/person)<br>
+                🥾 Gulf State Park trails<br>
+                🏐 Beach volleyball & water sports<br>
+                🌅 Sunset watching at public beach<br>
+                🦞 Fresh seafood feasting</p>
+            </div>
 
-        function acceptMission() {
-            const message = document.getElementById('finalMessage');
-            message.classList.add('show');
-        }
-    </script>
-</body>
-</html>
+            <div class="lodging-section">
+                <p class="detail-label">LODGING OPTIONS:</p>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/hotel1/400/300" alt="Beachfront Hotel" class="option-image">
+                    <div class="option-details">
+                        <h4>Budget Beachfront Hotel</h4>
+                        <p>~$150-180/night in summer | Gulf views, pool, walking distance to beach<br>
+                        <strong>3 nights = $450-540</strong></p>
+                    </div>
+                </div>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/condo1/400/300" alt="Condo" class="option-image">
+                    <div class="option-details">
+                        <h4>Beach Condo w/ Kitchen</h4>
+                        <p>~$170-210/night | Full kitchen (save on meals), balcony, beachfront<br>
+                        <strong>3 nights = $510-630</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="itinerary-section">
+                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/beach2/400/300" alt="Beach Day" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 1: Arrival & Beach Time</h4>
+                        <p>Morning drive, check-in, afternoon beach lounging, sunset dinner at The Gulf ($60-80 for 2)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/dolphin1/400/300" alt="Adventure" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 2: Adventure Day</h4>
+                        <p>Dolphin cruise morning ($70 for 2), Gulf State Park hiking, beach games, casual seafood dinner ($40-50)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/seafood1/400/300" alt="Food Day" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 3: Relaxation & Departure</h4>
+                        <p>Morning beach walk, final swim, lunch at Fishers ($50-70), departure</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>BUDGET BREAKDOWN</h3>
+                <p><strong>Lodging:</strong> $450-630 (hotel/condo for 3 nights)<br>
+                <strong>Food:</strong> $150-200 (mix of dining out & groceries if condo)<br>
+                <strong>Activities:</strong> $70-100 (dolphin cruise, park fees)<br>
+                <strong>Gas:</strong> ~$40 round trip<br>
+                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $710-970</strong></span></p>
+            </div>
+
+            <button class="btn" onclick="goToScreen(8)">SELECT THIS DESTINATION</button>
+        </div>
+    </div>
+
+    <!-- Screen 5: Fall - Fairhope -->
+    <div id="screen5" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <div class="destination-page">
+            <div class="classified-header">
+                <h2>🍂 FALL: FAIRHOPE</h2>
+                <p class="subtitle">/// EASTERN SHORE, ALABAMA ///</p>
+            </div>
+            
+            <img src="https://picsum.photos/seed/fairhope1/1000/300" alt="Fairhope" class="destination-hero">
+            
+            <div class="info-section">
+                <h3>MISSION OVERVIEW</h3>
+                <p><span class="detail-label">LOCATION:</span> Eastern Shore of Mobile Bay (3 hours from Birmingham)</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Fall (Sep-Nov) for perfect weather & arts festivals</p>
+                <p style="margin-top: 15px;">Artistic coastal town with tree-lined streets, bay views, and exceptional restaurants. Perfect blend of art, food, and relaxation with pleasant fall temperatures.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>ACTIVITIES & INTEL</h3>
+                <p>🎨 Downtown art galleries (FREE)<br>
+                🌉 Fairhope Pier & bay sunsets<br>
+                🛍️ Boutique shopping district<br>
+                🍷 Wine bars & craft cocktails<br>
+                🍴 Farm-to-table dining scene<br>
+                🏖️ Nearby Gulf beaches (30 min drive)</p>
+            </div>
+
+            <div class="lodging-section">
+                <p class="detail-label">LODGING OPTIONS:</p>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/fhinn1/400/300" alt="Inn" class="option-image">
+                    <div class="option-details">
+                        <h4>Downtown Boutique Inn</h4>
+                        <p>~$120-150/night | Walking to everything, complimentary breakfast<br>
+                        <strong>3 nights = $360-450</strong></p>
+                    </div>
+                </div>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/fhbnb1/400/300" alt="B&B" class="option-image">
+                    <div class="option-details">
+                        <h4>Bay View B&B</h4>
+                        <p>~$140-170/night | Waterfront views, gourmet breakfast, charming<br>
+                        <strong>3 nights = $420-510</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="itinerary-section">
+                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/fhtown1/400/300" alt="Downtown" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 1: Arts & Downtown</h4>
+                        <p>Arrival, gallery hopping, boutique shopping, pier sunset, fine dining ($70-90)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/fhbay1/400/300" alt="Bay" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 2: Bay & Beach</h4>
+                        <p>Kayak bay morning ($40), Gulf beach afternoon, casual waterfront dinner ($50-60)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/fhfood1/400/300" alt="Food" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 3: Culinary Tour</h4>
+                        <p>Farmers market, brunch at local café ($40), wine tasting ($30-40), departure</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>BUDGET BREAKDOWN</h3>
+                <p><strong>Lodging:</strong> $360-510 (B&B with breakfast included)<br>
+                <strong>Food:</strong> $160-190 (dining out, some meals included)<br>
+                <strong>Activities:</strong> $70-80 (kayak, wine tasting)<br>
+                <strong>Gas:</strong> ~$45 round trip<br>
+                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $635-825</strong></span></p>
+            </div>
+
+            <button class="btn" onclick="goToScreen(8)">SELECT THIS DESTINATION</button>
+        </div>
+    </div>
+
+    <!-- Screen 6: Winter - Chattanooga -->
+    <div id="screen6" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <div class="destination-page">
+            <div class="classified-header">
+                <h2>❄️ WINTER: CHATTANOOGA</h2>
+                <p class="subtitle">/// TENNESSEE ///</p>
+            </div>
+            
+            <img src="https://picsum.photos/seed/chatt1/1000/300" alt="Chattanooga" class="destination-hero">
+            
+            <div class="info-section">
+                <h3>MISSION OVERVIEW</h3>
+                <p><span class="detail-label">LOCATION:</span> Southeastern Tennessee (2 hours from Birmingham)</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Winter (Dec-Feb) for holiday lights, cozy vibes & off-peak pricing</p>
+                <p style="margin-top: 15px;">Mountain town with riverfront charm, thriving food scene, and excellent breweries. Mix of outdoor adventure and urban exploration, spectacular with winter decorations.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>ACTIVITIES & INTEL</h3>
+                <p>🐠 Tennessee Aquarium ($35/person)<br>
+                🎄 Rock City holiday lights ($30/person)<br>
+                💎 Ruby Falls underground tour ($30/person)<br>
+                🌉 Walnut Street Bridge walk (FREE)<br>
+                🍺 Craft brewery tours ($10-15/person)<br>
+                🍴 Downtown dining district</p>
+            </div>
+
+            <div class="lodging-section">
+                <p class="detail-label">LODGING OPTIONS:</p>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/chathotel1/400/300" alt="Hotel" class="option-image">
+                    <div class="option-details">
+                        <h4>Downtown Boutique Hotel</h4>
+                        <p>~$110-140/night | Walk to attractions, riverfront views<br>
+                        <strong>3 nights = $330-420</strong></p>
+                    </div>
+                </div>
+                <div class="lodging-option">
+                    <img src="https://picsum.photos/seed/chatcabin1/400/300" alt="Cabin" class="option-image">
+                    <div class="option-details">
+                        <h4>Lookout Mountain Cabin</h4>
+                        <p>~$130-160/night | Mountain views, cozy fireplace, scenic<br>
+                        <strong>3 nights = $390-480</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="itinerary-section">
+                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/chataqua1/400/300" alt="Aquarium" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 1: Aquarium & Riverfront</h4>
+                        <p>Tennessee Aquarium ($70 for 2), bridge walk, riverfront dinner ($60-70)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/chatlook1/400/300" alt="Lookout" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 2: Lookout Mountain</h4>
+                        <p>Rock City holiday lights ($60 for 2), Ruby Falls ($60 for 2), dinner ($50-60)</p>
+                    </div>
+                </div>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/chatbrew1/400/300" alt="Brewery" class="option-image">
+                    <div class="option-details">
+                        <h4>Day 3: Food & Brew</h4>
+                        <p>Brunch ($40), brewery tour ($25 for 2), Southside exploring, departure</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>BUDGET BREAKDOWN</h3>
+                <p><strong>Lodging:</strong> $330-480 (hotel or cabin 3 nights)<br>
+                <strong>Food:</strong> $150-190<br>
+                <strong>Activities:</strong> $215 (aquarium, Rock City, Ruby Falls, brewery)<br>
+                <strong>Gas:</strong> ~$35 round trip<br>
+                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $730-920</strong></span></p>
+            </div>
+
+            <button class="btn" onclick="goToScreen(8)">SELECT THIS DESTINATION</button>
+        </div>
+    </div>
+
+    <!-- Screen 7: Spring - Mountains -->
+    <div id="screen7" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <div class="destination-page">
+            <div class="classified-header">
+                <h2>🌸 SPRING: MOUNTAIN GETAWAYS</h2>
+                <p class="subtitle">/// TWO OPTIONS FOR DEPLOYMENT ///</p>
+            </div>
+
+            <div class="info-section">
+                <h3>OPTION A: BLUE RIDGE, GEORGIA</h3>
+                <img src="https://picsum.photos/seed/blueridge1/1000/250" alt="Blue Ridge" style="width: 100%; height: 250px; object-fit: cover; margin: 15px 0; border: 2px solid #00ff41;">
+                <p><span class="detail-label">LOCATION:</span> North Georgia Mountains (2 hours from Birmingham)</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Spring (Mar-May) for wildflowers & moderate temps</p>
+                <p style="margin-top: 15px;">Charming mountain town with antique shops, local wineries, and scenic views. Perfect for relaxation with a touch of adventure.</p>
+                <p style="margin-top: 15px;"><span class="detail-label">ACTIVITIES:</span> Blue Ridge Scenic Railway ($55/person), hiking waterfalls (FREE), downtown shopping, wine tasting ($20-30/person), cabin with hot tub</p>
+                <p style="margin-top: 10px;"><span class="detail-label">LODGING:</span> Mountain cabins $130-170/night = $390-510 for 3 nights</p>
+                <p style="margin-top: 10px;"><span class="detail-label">BUDGET:</span> $680-860 total</p>
+            </div>
+
+            <div class="info-section" style="margin-top: 30px;">
+                <h3>OPTION B: MENTONE, ALABAMA</h3>
+                <img src="https://picsum.photos/seed/mentone1/1000/250" alt="Mentone" style="width: 100%; height: 250px; object-fit: cover; margin: 15px 0; border: 2px solid #00ff41;">
+                <p><span class="detail-label">LOCATION:</span> Lookout Mountain plateau, Alabama (1.5 hours from Birmingham)</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Spring (Mar-May) for waterfall flows & wildflower blooms</p>
+                <p style="margin-top: 15px;">Quiet mountain retreat with stunning views, waterfalls, and local charm. Alabama's hidden gem for peaceful getaways.</p>
+                <p style="margin-top: 15px;"><span class="detail-label">ACTIVITIES:</span> DeSoto Falls (FREE), Little River Canyon (FREE), downtown Mentone shops, hiking, scenic drives, cabin dining</p>
+                <p style="margin-top: 10px;"><span class="detail-label">LODGING:</span> Cozy cabins $120-150/night = $360-450 for 3 nights</p>
+                <p style="margin-top: 10px;"><span class="detail-label">BUDGET:</span> $550-710 total (MOST AFFORDABLE!)</p>
+            </div>
+
+            <div class="itinerary-section">
+                <p class="detail-label">SAMPLE SPRING MOUNTAIN ITINERARY:</p>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/mountain1/400/300" alt="Arrival" class="option-image">
+                    <div class="option-details">
