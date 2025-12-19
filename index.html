@@ -139,18 +139,31 @@
 </div>
 
 <script>
-  function nextScreen(n) {
+document.addEventListener("DOMContentLoaded", function () {
+
+  function showScreen(n) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('screen' + n).classList.add('active');
     window.scrollTo(0,0);
   }
-  function toggle(card) {
+
+  document.getElementById('startBtn').addEventListener('click', function () {
+    showScreen(2);
+  });
+
+  window.nextScreen = showScreen;
+
+  window.toggle = function(card) {
     const d = card.querySelector('.details');
     d.style.display = d.style.display === 'block' ? 'none' : 'block';
-  }
-  function acceptMission() {
-    document.getElementById('finalMsg').innerText = 'Mission accepted. Your handler will take care of everything.';
-  }
+  };
+
+  window.acceptMission = function() {
+    document.getElementById('finalMsg').innerText =
+      'Mission accepted. Your handler will take care of everything.';
+  };
+
+});
 </script>
 
 </body>
