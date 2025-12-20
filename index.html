@@ -760,3 +760,36 @@
                     <li><strong>Sunset Pointe:</strong> Waterfront dining with stunning bay views, fresh seafood</li>
                     <li><strong>Panini Pete's:</strong> Creative paninis, salads, excellent wine list</li>
                     <li><strong>Dragonfly Foodbar:</strong> Farm-to-table Southern fusion, intimate atmosphere</li>
+targetScreen.style.display = 'flex';
+}
+// Activate matrix only on screen 1
+        if (screenNumber === 1) {
+            canvas.classList.add('active');
+            if (!matrixInterval) {
+                matrixInterval = setInterval(drawMatrix, 33);
+            }
+        } else {
+            canvas.classList.remove('active');
+        }
+        
+        window.scrollTo(0, 0);
+    }
+
+    function acceptMission() {
+        const message = document.getElementById('finalMessage');
+        message.classList.add('show');
+    }
+
+    // Start matrix on load
+    window.addEventListener('load', () => {
+        matrixInterval = setInterval(drawMatrix, 33);
+        setTimeout(() => {
+            canvas.classList.add('active');
+        }, 500);
+    });
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
