@@ -315,17 +315,17 @@
                 <p>2 Mountain Destinations</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Mar-May</p>
             </div>
-            <div class="season-card" onclick="goToScreen(7)">
+            <div class="season-card" onclick="goToScreen(6)">
                 <h3>☀️ SUMMER</h3>
                 <p>2 Beach Destinations</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Jun-Aug</p>
             </div>
-            <div class="season-card" onclick="goToScreen(10)">
+            <div class="season-card" onclick="goToScreen(8)">
                 <h3>🍂 FALL</h3>
                 <p>2 Mountain Destinations</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Sep-Nov</p>
             </div>
-            <div class="season-card" onclick="goToScreen(13)">
+            <div class="season-card" onclick="goToScreen(10)">
                 <h3>❄️ WINTER</h3>
                 <p>2 Cozy Destinations</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Dec-Feb</p>
@@ -333,10 +333,32 @@
         </div>
     </div>
 
-    <!-- Screen 4: Spring - Chattanooga -->
+    <!-- Screen 4: Spring Operations Menu -->
+    <!-- Screen 5: Spring - Chattanooga -->
+    <div id="screen5" class="screen">
+        <button class="back-btn" onclick="goToScreen(4)">← OPERATIONS</button>
+        <div class="classified-header">
+            <h2>🌸 SPRING OPERATIONS</h2>
+            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
+        </div>
+        <div class="season-grid">
+            <div class="season-card" onclick="goToScreen(5)">
+                <h3>OPERATION: RIVER CITY</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">CHATTANOOGA, TN</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Aquarium • Rock City • Breweries</p>
+            </div>
+            <div class="season-card" onclick="goToScreen(5.5)">
+                <h3>OPERATION: BLUE SUMMIT</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">BLUE RIDGE, GA</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Scenic Railway • Waterfalls • Wine</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 5: Spring - Chattanooga -->
     <!-- Screen 7: Summer - Gulf Shores -->
     <div id="screen7" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <button class="back-btn" onclick="goToScreen(6)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>🌸 SPRING: CHATTANOOGA</h2>
@@ -416,14 +438,13 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $730-920</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(5)">VIEW OTHER SPRING OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 5: Spring - Blue Ridge -->
-    <div id="screen5" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+    <!-- Screen 5.5: Spring - Blue Ridge -->
+    <div id="screen5" class="screen" style="display: none;">
+        <button class="back-btn" onclick="goToScreen(4)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>🌸 SPRING: BLUE RIDGE</h2>
@@ -609,14 +630,13 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $710-970</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(8)">VIEW OTHER SUMMER OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 8: Summer - Fairhope -->
-    <div id="screen8" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+    <!-- Screen 7.5: Summer - Fairhope -->
+    <div id="screen7" class="screen" style="display: none;">
+        <button class="back-btn" onclick="goToScreen(6)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>🍂 FALL: FAIRHOPE</h2>
@@ -696,35 +716,34 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $635-825</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(7)">VIEW OTHER SUMMER OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 9: Summer Options Menu -->
-    <div id="screen9" class="screen">
+    <!-- Screen 8: Fall Operations Menu -->
+    <div id="screen8" class="screen">
         <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
         <div class="classified-header">
-            <h2>☀️ SUMMER DESTINATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR MISSION ///</p>
+            <h2>🍂 FALL OPERATIONS</h2>
+            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
         </div>
         <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(7)">
-                <h3>GULF SHORES</h3>
-                <p>Alabama</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">White Sand Beach, Dolphins, Seafood</p>
+            <div class="season-card" onclick="goToScreen(9)">
+                <h3>OPERATION: SMOKY RIDGE</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">GATLINBURG / PIGEON FORGE, TN</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Smokies • Fall Foliage • Attractions</p>
             </div>
-            <div class="season-card" onclick="goToScreen(8)">
-                <h3>FAIRHOPE</h3>
-                <p>Alabama</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Art Galleries, Bay Views, Fine Dining</p>
+            <div class="season-card" onclick="goToScreen(9.5)">
+                <h3>OPERATION: ALPINE FEST</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">HELEN, GA</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Bavarian Village • Oktoberfest</p>
             </div>
         </div>
     </div>
 
-    <!-- Screen 10: Fall - Gatlinburg/Pigeon Forge -->
+    <!-- Screen 9: Fall - Gatlinburg/Pigeon Forge -->
     <div id="screen10" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <button class="back-btn" onclick="goToScreen(8)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>🍂 FALL: GATLINBURG / PIGEON FORGE</h2>
@@ -805,14 +824,13 @@
                 <span style="color: #888; font-size: 0.9em;">*Add $170 for Dollywood if desired</span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(11)">VIEW OTHER FALL OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 11: Fall - Helen -->
-    <div id="screen11" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+    <!-- Screen 9.5: Fall - Helen -->
+    <div id="screen9" class="screen" style="display: none;">
+        <button class="back-btn" onclick="goToScreen(8)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>🍂 FALL: HELEN</h2>
@@ -892,35 +910,34 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $570-860</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(10)">VIEW OTHER FALL OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 12: Fall Options Menu -->
-    <div id="screen12" class="screen">
+    <!-- Screen 10: Winter Operations Menu -->
+    <div id="screen10" class="screen">
         <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
         <div class="classified-header">
-            <h2>🍂 FALL DESTINATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR MISSION ///</p>
+            <h2>❄️ WINTER OPERATIONS</h2>
+            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
         </div>
         <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(10)">
-                <h3>GATLINBURG / PIGEON FORGE</h3>
-                <p>Tennessee</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Smoky Mountains, Fall Foliage</p>
-            </div>
             <div class="season-card" onclick="goToScreen(11)">
-                <h3>HELEN</h3>
-                <p>Georgia</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Bavarian Village, Oktoberfest</p>
+                <h3>OPERATION: MOUNTAIN RETREAT</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">MENTONE, AL</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Cozy Cabins • Waterfalls • Budget</p>
+            </div>
+            <div class="season-card" onclick="goToScreen(11.5)">
+                <h3>OPERATION: MUSIC CITY</h3>
+                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">FRANKLIN / NASHVILLE, TN</p>
+                <p style="font-size: 0.85em; margin-top: 10px;">Live Music • Food Scene • History</p>
             </div>
         </div>
     </div>
 
-    <!-- Screen 13: Winter - Mentone -->
+    <!-- Screen 11: Winter - Mentone -->
     <div id="screen13" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+        <button class="back-btn" onclick="goToScreen(10)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>❄️ WINTER: MENTONE</h2>
@@ -1001,14 +1018,13 @@
                 <span style="color: #00ff41; font-size: 1em;">⭐ MOST AFFORDABLE OPTION!</span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(14)">VIEW OTHER WINTER OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 14: Winter - Franklin/Nashville -->
-    <div id="screen14" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
+    <!-- Screen 11.5: Winter - Franklin/Nashville -->
+    <div id="screen11" class="screen" style="display: none;">
+        <button class="back-btn" onclick="goToScreen(10)">← OPERATIONS</button>
         <div class="destination-page">
             <div class="classified-header">
                 <h2>❄️ WINTER: FRANKLIN / NASHVILLE</h2>
@@ -1088,29 +1104,7 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $675-915</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(13)">VIEW OTHER WINTER OPTION</button>
             <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 15: Winter Options Menu -->
-    <div id="screen15" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
-        <div class="classified-header">
-            <h2>❄️ WINTER DESTINATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR MISSION ///</p>
-        </div>
-        <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(13)">
-                <h3>MENTONE</h3>
-                <p>Alabama</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Cozy Retreat, Waterfalls, Budget-Friendly</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(14)">
-                <h3>FRANKLIN / NASHVILLE</h3>
-                <p>Tennessee</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Music City, Food Scene, History</p>
-            </div>
         </div>
     </div>
 
@@ -1308,7 +1302,15 @@
         function goToScreen(screenNumber) {
             const screens = document.querySelectorAll('.screen');
             screens.forEach(screen => screen.classList.remove('active'));
-            document.getElementById('screen' + screenNumber).classList.add('active');
+            
+            // Handle decimal screen numbers (e.g., 5.5, 7.5, 9.5, 11.5)
+            const screenId = 'screen' + screenNumber;
+            const targetScreen = document.getElementById(screenId);
+            
+            if (targetScreen) {
+                targetScreen.classList.add('active');
+                targetScreen.style.display = 'flex';
+            }
             
             // Activate matrix only on screen 1
             if (screenNumber === 1) {
