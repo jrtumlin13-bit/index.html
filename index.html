@@ -173,7 +173,6 @@
             max-width: 1000px;
             width: 100%;
             padding: 20px;
-            padding-top: 80px;
         }
 
         .destination-hero {
@@ -312,244 +311,29 @@
         </div>
         <div class="season-grid">
             <div class="season-card" onclick="goToScreen(4)">
-                <h3>🌸 SPRING</h3>
-                <p>2 Mountain Destinations</p>
-                <p style="font-size: 0.8em; margin-top: 10px;">Mar-May</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(6)">
                 <h3>☀️ SUMMER</h3>
-                <p>2 Beach Destinations</p>
+                <p>Beach Operations</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Jun-Aug</p>
             </div>
-            <div class="season-card" onclick="goToScreen(8)">
+            <div class="season-card" onclick="goToScreen(5)">
                 <h3>🍂 FALL</h3>
-                <p>2 Mountain Destinations</p>
+                <p>Coastal Missions</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Sep-Nov</p>
             </div>
-            <div class="season-card" onclick="goToScreen(10)">
+            <div class="season-card" onclick="goToScreen(6)">
                 <h3>❄️ WINTER</h3>
-                <p>2 Cozy Destinations</p>
+                <p>Mountain Retreats</p>
                 <p style="font-size: 0.8em; margin-top: 10px;">Dec-Feb</p>
             </div>
-        </div>
-    </div>
-
-    <!-- Screen 4: Spring Operations Menu -->
-    <!-- Screen 101: Spring - Chattanooga -->
-    <div id="screen101" class="screen">
-        <button class="back-btn" onclick="goToScreen(4)">← OPERATIONS</button>
-        <div class="classified-header">
-            <h2>🌸 SPRING OPERATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
-        </div>
-        <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(101)">
-                <h3>OPERATION: RIVER CITY</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">CHATTANOOGA, TN</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Aquarium • Rock City • Breweries</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(102)">
-                <h3>OPERATION: BLUE SUMMIT</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">BLUE RIDGE, GA</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Scenic Railway • Waterfalls • Wine</p>
+            <div class="season-card" onclick="goToScreen(7)">
+                <h3>🌸 SPRING</h3>
+                <p>Mountain & Valley</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Mar-May</p>
             </div>
         </div>
     </div>
 
-    <!-- Screen 5: Spring - Chattanooga -->
-    <!-- Screen 201: Summer - Gulf Shores -->
-    <div id="screen201" class="screen">
-        <button class="back-btn" onclick="goToScreen(6)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>🌸 SPRING: CHATTANOOGA</h2>
-                <p class="subtitle">/// TENNESSEE ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/chatt1/1000/300" alt="Chattanooga" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> Southeastern Tennessee (2 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Spring (Mar-May) for blooming flowers, perfect temps & off-peak pricing</p>
-                <p style="margin-top: 15px;">Mountain town with riverfront charm, thriving food scene, and excellent breweries. Mix of outdoor adventure and urban exploration, gorgeous in spring.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>🐠 Tennessee Aquarium ($35/person)<br>
-                🌸 Rock City Gardens spring blooms ($30/person)<br>
-                💎 Ruby Falls underground tour ($30/person)<br>
-                🌉 Walnut Street Bridge walk (FREE)<br>
-                🍺 Craft brewery tours ($10-15/person)<br>
-                🥾 Lookout Mountain hiking trails</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/chathotel1/400/300" alt="Hotel" class="option-image">
-                    <div class="option-details">
-                        <h4>Downtown Boutique Hotel</h4>
-                        <p>~$110-140/night | Walk to attractions, riverfront views<br>
-                        <strong>3 nights = $330-420</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/chatcabin1/400/300" alt="Cabin" class="option-image">
-                    <div class="option-details">
-                        <h4>Lookout Mountain Cabin</h4>
-                        <p>~$130-160/night | Mountain views, cozy fireplace, scenic<br>
-                        <strong>3 nights = $390-480</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/chataqua1/400/300" alt="Aquarium" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Aquarium & Riverfront</h4>
-                        <p>Tennessee Aquarium ($70 for 2), bridge walk, riverfront dinner ($60-70)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/chatlook1/400/300" alt="Lookout" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Lookout Mountain</h4>
-                        <p>Rock City spring gardens ($60 for 2), Ruby Falls ($60 for 2), dinner ($50-60)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/chatbrew1/400/300" alt="Brewery" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Food & Brew</h4>
-                        <p>Brunch ($40), brewery tour ($25 for 2), Southside exploring, departure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $330-480 (hotel or cabin 3 nights)<br>
-                <strong>Food:</strong> $150-190<br>
-                <strong>Activities:</strong> $215 (aquarium, Rock City, Ruby Falls, brewery)<br>
-                <strong>Gas:</strong> ~$35 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $730-920</strong></span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 102: Spring - Blue Ridge -->
-    <div id="screen102" class="screen">
-        <button class="back-btn" onclick="goToScreen(4)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>🌸 OPERATION: BLUE SUMMIT</h2>
-                <p class="subtitle">/// BLUE RIDGE, GEORGIA ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/blueridge1/1000/300" alt="Blue Ridge" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> North Georgia Mountains (2 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Spring (Mar-May) for wildflowers & moderate temps</p>
-                <p style="margin-top: 15px;">Charming mountain town with antique shops, local wineries, and scenic views. Perfect for relaxation with a touch of adventure.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>🚂 Blue Ridge Scenic Railway ($55/person)<br>
-                💧 Waterfall hikes - Amicalola, Long Creek (FREE)<br>
-                🛍️ Downtown antique shopping<br>
-                🍷 Local winery tastings ($20-30/person)<br>
-                🏞️ Blue Ridge Lake activities<br>
-                🛁 Cabin with hot tub & fire pit</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/brcabin1/400/300" alt="Cabin" class="option-image">
-                    <div class="option-details">
-                        <h4>Mountain Cabin w/ Hot Tub</h4>
-                        <p>~$140-170/night | Hot tub, fire pit, mountain views, full kitchen<br>
-                        <strong>3 nights = $420-510</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/brbnb1/400/300" alt="B&B" class="option-image">
-                    <div class="option-details">
-                        <h4>Downtown B&B</h4>
-                        <p>~$120-150/night | Walking distance, breakfast included, cozy<br>
-                        <strong>3 nights = $360-450</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/brtrain1/400/300" alt="Train" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Scenic Railway</h4>
-                        <p>Arrival, Blue Ridge Scenic Railway ($110 for 2), downtown dinner ($50-60)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/brwaterfall1/400/300" alt="Hiking" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Waterfall Adventure</h4>
-                        <p>Hike to waterfalls, picnic lunch, wine tasting ($50 for 2), cabin time</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/brtown1/400/300" alt="Shopping" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Downtown Exploring</h4>
-                        <p>Antique shopping, brunch ($40), lake views, departure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $360-510 (cabin or B&B 3 nights)<br>
-                <strong>Food:</strong> $140-180 (can cook in cabin)<br>
-                <strong>Activities:</strong> $160-180 (railway, wine tasting)<br>
-                <strong>Gas:</strong> ~$35 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $695-905</strong></span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(4)">VIEW OTHER SPRING OPTION</button>
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 6: Spring Options Menu -->
-    <div id="screen6" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
-        <div class="classified-header">
-            <h2>🌸 SPRING DESTINATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR MISSION ///</p>
-        </div>
-        <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(4)">
-                <h3>CHATTANOOGA</h3>
-                <p>Tennessee</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Aquarium, Rock City, Breweries</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(5)">
-                <h3>BLUE RIDGE</h3>
-                <p>Georgia</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Scenic Railway, Waterfalls, Wine</p>
-            </div>
-        </div>
-    </div>
+    <!-- Screen 4: Summer - Gulf Shores -->
     <div id="screen4" class="screen">
         <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
         <div class="destination-page">
@@ -631,17 +415,17 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $710-970</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
+            <button class="btn" onclick="goToScreen(8)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 202: Summer - Fairhope -->
-    <div id="screen202" class="screen">
-        <button class="back-btn" onclick="goToScreen(6)">← OPERATIONS</button>
+    <!-- Screen 5: Fall - Fairhope -->
+    <div id="screen5" class="screen">
+        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
         <div class="destination-page">
             <div class="classified-header">
-                <h2>☀️ OPERATION: BAY ARTIST</h2>
-                <p class="subtitle">/// FAIRHOPE, ALABAMA ///</p>
+                <h2>🍂 FALL: FAIRHOPE</h2>
+                <p class="subtitle">/// EASTERN SHORE, ALABAMA ///</p>
             </div>
             
             <img src="https://picsum.photos/seed/fairhope1/1000/300" alt="Fairhope" class="destination-hero">
@@ -649,8 +433,8 @@
             <div class="info-section">
                 <h3>MISSION OVERVIEW</h3>
                 <p><span class="detail-label">LOCATION:</span> Eastern Shore of Mobile Bay (3 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Summer (Jun-Aug) for beach access & bay activities</p>
-                <p style="margin-top: 15px;">Artistic coastal town with tree-lined streets, bay views, and exceptional restaurants. Perfect blend of art, food, and beach relaxation with nearby Gulf access.</p>
+                <p><span class="detail-label">OPTIMAL SEASON:</span> Fall (Sep-Nov) for perfect weather & arts festivals</p>
+                <p style="margin-top: 15px;">Artistic coastal town with tree-lined streets, bay views, and exceptional restaurants. Perfect blend of art, food, and relaxation with pleasant fall temperatures.</p>
             </div>
 
             <div class="info-section">
@@ -717,400 +501,12 @@
                 <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $635-825</strong></span></p>
             </div>
 
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
+            <button class="btn" onclick="goToScreen(8)">SELECT THIS DESTINATION</button>
         </div>
     </div>
 
-    <!-- Screen 8: Fall Operations Menu -->
-    <div id="screen8" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
-        <div class="classified-header">
-            <h2>🍂 FALL OPERATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
-        </div>
-        <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(301)">
-                <h3>OPERATION: SMOKY RIDGE</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">GATLINBURG / PIGEON FORGE, TN</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Smokies • Fall Foliage • Attractions</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(302)">
-                <h3>OPERATION: ALPINE FEST</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">HELEN, GA</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Bavarian Village • Oktoberfest</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Screen 301: Fall - Gatlinburg/Pigeon Forge -->
-    <div id="screen301" class="screen">
-        <button class="back-btn" onclick="goToScreen(8)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>🍂 OPERATION: SMOKY RIDGE</h2>
-                <p class="subtitle">/// GATLINBURG / PIGEON FORGE, TN ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/gatlinburg1/1000/300" alt="Gatlinburg" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> Great Smoky Mountains, Tennessee (3.5 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Fall (Sep-Nov) for SPECTACULAR fall foliage</p>
-                <p style="margin-top: 15px;">Mountain resort towns at the gateway to Great Smoky Mountains National Park. Fall colors are absolutely stunning. Mix of natural beauty, mountain attractions, and entertainment.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>🍁 Great Smoky Mountains NP hiking (FREE)<br>
-                🚡 Ober Gatlinburg aerial tram ($30/person)<br>
-                🎡 Dollywood theme park ($85/person - optional)<br>
-                🌉 Gatlinburg SkyBridge ($35/person)<br>
-                🥞 Pancake houses & mountain dining<br>
-                🎭 Shows & entertainment</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/gatcabin1/400/300" alt="Cabin" class="option-image">
-                    <div class="option-details">
-                        <h4>Mountain Cabin w/ Views</h4>
-                        <p>~$150-190/night | Hot tub, fireplace, mountain views<br>
-                        <strong>3 nights = $450-570</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/gathotel1/400/300" alt="Hotel" class="option-image">
-                    <div class="option-details">
-                        <h4>Downtown Gatlinburg Hotel</h4>
-                        <p>~$130-170/night | Walk to attractions, pool, parking<br>
-                        <strong>3 nights = $390-510</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/smokies1/400/300" alt="Smokies" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Smoky Mountains</h4>
-                        <p>Cades Cove scenic drive, hiking trails, fall foliage, dinner ($50-60)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/gattown1/400/300" alt="Gatlinburg" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Gatlinburg Attractions</h4>
-                        <p>SkyBridge ($70 for 2), Ober Gatlinburg ($60 for 2), downtown exploring</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/pigeon1/400/300" alt="Pigeon Forge" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Pigeon Forge</h4>
-                        <p>The Island attractions, shopping, show or relaxation, departure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $390-570 (cabin or hotel 3 nights)<br>
-                <strong>Food:</strong> $150-200<br>
-                <strong>Activities:</strong> $130-200 (SkyBridge, Ober, optional show)<br>
-                <strong>Gas:</strong> ~$50 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $720-1020</strong></span><br>
-                <span style="color: #888; font-size: 0.9em;">*Add $170 for Dollywood if desired</span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 302: Fall - Helen -->
-    <div id="screen302" class="screen">
-        <button class="back-btn" onclick="goToScreen(8)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>🍂 OPERATION: ALPINE FEST</h2>
-                <p class="subtitle">/// HELEN, GEORGIA ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/helen1/1000/300" alt="Helen" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> North Georgia Mountains (2.5 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Fall (Sep-Nov) for Oktoberfest & fall colors</p>
-                <p style="margin-top: 15px;">Bavarian-style alpine village nestled in the mountains. Famous for Oktoberfest celebrations, German food, and stunning fall foliage. Unique and charming destination.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>🍺 Oktoberfest celebration (Sep-Nov)<br>
-                🚣 Chattahoochee River tubing<br>
-                🥾 Anna Ruby Falls hike ($3 parking)<br>
-                🍷 Local winery tours<br>
-                🏔️ Brasstown Bald (highest GA point)<br>
-                🛍️ Bavarian village shopping</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/helencabin1/400/300" alt="Cabin" class="option-image">
-                    <div class="option-details">
-                        <h4>Riverside Cabin</h4>
-                        <p>~$140-180/night | River views, hot tub, fire pit<br>
-                        <strong>3 nights = $420-540</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/heleninn1/400/300" alt="Inn" class="option-image">
-                    <div class="option-details">
-                        <h4>Bavarian Inn Downtown</h4>
-                        <p>~$110-150/night | Walk to everything, Alpine style<br>
-                        <strong>3 nights = $330-450</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/helenfest1/400/300" alt="Oktoberfest" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Oktoberfest & Village</h4>
-                        <p>Arrive, Oktoberfest celebration, German dinner & beer, village stroll</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/helenhike1/400/300" alt="Hiking" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Nature Adventure</h4>
-                        <p>Anna Ruby Falls hike, Brasstown Bald drive, wine tasting ($50 for 2)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/helenriver1/400/300" alt="River" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Relaxation</h4>
-                        <p>River walk, shopping, brunch ($40), scenic drive home</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $330-540 (inn or cabin 3 nights)<br>
-                <strong>Food:</strong> $150-200 (German food & beer!)<br>
-                <strong>Activities:</strong> $50-80 (wine tasting, parking)<br>
-                <strong>Gas:</strong> ~$40 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $570-860</strong></span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 10: Winter Operations Menu -->
-    <div id="screen10" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
-        <div class="classified-header">
-            <h2>❄️ WINTER OPERATIONS</h2>
-            <p class="subtitle">/// SELECT YOUR OPERATION ///</p>
-        </div>
-        <div class="season-grid">
-            <div class="season-card" onclick="goToScreen(401)">
-                <h3>OPERATION: MOUNTAIN RETREAT</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">MENTONE, AL</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Cozy Cabins • Waterfalls • Budget</p>
-            </div>
-            <div class="season-card" onclick="goToScreen(402)">
-                <h3>OPERATION: MUSIC CITY</h3>
-                <p style="font-size: 1.1em; color: #00ff41; margin-top: 15px;">FRANKLIN / NASHVILLE, TN</p>
-                <p style="font-size: 0.85em; margin-top: 10px;">Live Music • Food Scene • History</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Screen 401: Winter - Mentone -->
-    <div id="screen401" class="screen">
-        <button class="back-btn" onclick="goToScreen(10)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>❄️ OPERATION: MOUNTAIN RETREAT</h2>
-                <p class="subtitle">/// MENTONE, ALABAMA ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/mentone1/1000/300" alt="Mentone" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> Lookout Mountain plateau, Alabama (1.5 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Winter (Dec-Feb) for cozy cabin vibes & solitude</p>
-                <p style="margin-top: 15px;">Quiet mountain retreat with stunning views, waterfalls, and local charm. Alabama's hidden gem for peaceful, cozy getaways. Perfect for unplugging and relaxing.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>💧 DeSoto Falls (FREE)<br>
-                🏞️ Little River Canyon (FREE)<br>
-                🛍️ Downtown Mentone shops<br>
-                🥾 Hiking trails & overlooks<br>
-                🚗 Scenic mountain drives<br>
-                🔥 Cozy cabin with fireplace</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/mentcabin1/400/300" alt="Cabin" class="option-image">
-                    <div class="option-details">
-                        <h4>Cozy Mountain Cabin</h4>
-                        <p>~$120-150/night | Fireplace, mountain views, porch<br>
-                        <strong>3 nights = $360-450</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/mentinn1/400/300" alt="Inn" class="option-image">
-                    <div class="option-details">
-                        <h4>Historic Mountain Inn</h4>
-                        <p>~$100-130/night | Charming, breakfast included<br>
-                        <strong>3 nights = $300-390</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/mentfall1/400/300" alt="DeSoto" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Waterfalls</h4>
-                        <p>Arrival, DeSoto Falls hike, downtown exploring, cabin dinner</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/mentcanyon1/400/300" alt="Canyon" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Canyon Views</h4>
-                        <p>Little River Canyon scenic drive, overlooks, local restaurant ($40-50)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/mentcozy1/400/300" alt="Relaxation" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Cozy Cabin Day</h4>
-                        <p>Morning hike, cabin relaxation by fire, brunch, departure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $300-450 (cabin or inn 3 nights)<br>
-                <strong>Food:</strong> $120-160 (can cook in cabin)<br>
-                <strong>Activities:</strong> FREE (all nature!)<br>
-                <strong>Gas:</strong> ~$25 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $445-635</strong></span><br>
-                <span style="color: #00ff41; font-size: 1em;">⭐ MOST AFFORDABLE OPTION!</span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 402: Winter - Franklin/Nashville -->
-    <div id="screen402" class="screen">
-        <button class="back-btn" onclick="goToScreen(10)">← OPERATIONS</button>
-        <div class="destination-page">
-            <div class="classified-header">
-                <h2>❄️ OPERATION: MUSIC CITY</h2>
-                <p class="subtitle">/// FRANKLIN / NASHVILLE, TN ///</p>
-            </div>
-            
-            <img src="https://picsum.photos/seed/nashville1/1000/300" alt="Nashville" class="destination-hero">
-            
-            <div class="info-section">
-                <h3>MISSION OVERVIEW</h3>
-                <p><span class="detail-label">LOCATION:</span> Middle Tennessee (3 hours from Birmingham)</p>
-                <p><span class="detail-label">OPTIMAL SEASON:</span> Winter (Dec-Feb) for holiday lights, indoor attractions & live music</p>
-                <p style="margin-top: 15px;">Charming historic Franklin + vibrant Nashville. Mix of Southern history, incredible food scene, live music, and holiday charm. Perfect winter city escape.</p>
-            </div>
-
-            <div class="info-section">
-                <h3>ACTIVITIES & INTEL</h3>
-                <p>🎸 Live music on Broadway (FREE-$20)<br>
-                🏛️ Historic Franklin downtown (FREE)<br>
-                🎵 Country Music Hall of Fame ($30/person)<br>
-                🍗 Hot chicken & BBQ dining<br>
-                🛍️ Franklin shopping district<br>
-                🎄 Holiday lights & decorations</p>
-            </div>
-
-            <div class="lodging-section">
-                <p class="detail-label">LODGING OPTIONS:</p>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/frankhotel1/400/300" alt="Franklin Hotel" class="option-image">
-                    <div class="option-details">
-                        <h4>Franklin Historic Hotel</h4>
-                        <p>~$130-170/night | Downtown location, walkable, charming<br>
-                        <strong>3 nights = $390-510</strong></p>
-                    </div>
-                </div>
-                <div class="lodging-option">
-                    <img src="https://picsum.photos/seed/nashhotel1/400/300" alt="Nashville Hotel" class="option-image">
-                    <div class="option-details">
-                        <h4>Nashville Downtown Hotel</h4>
-                        <p>~$140-180/night | Near Broadway, music venues<br>
-                        <strong>3 nights = $420-540</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="itinerary-section">
-                <p class="detail-label">3-DAY SAMPLE ITINERARY:</p>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/franktown1/400/300" alt="Franklin" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 1: Franklin Exploration</h4>
-                        <p>Arrival, historic downtown, boutique shopping, dinner at local spot ($60-70)</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/nashmusic1/400/300" alt="Music" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 2: Nashville Music</h4>
-                        <p>Country Music Hall of Fame ($60 for 2), Broadway honky-tonks, live music</p>
-                    </div>
-                </div>
-                <div class="itinerary-option">
-                    <img src="https://picsum.photos/seed/nashfood1/400/300" alt="Food" class="option-image">
-                    <div class="option-details">
-                        <h4>Day 3: Food Tour</h4>
-                        <p>Hot chicken brunch ($40), BBQ lunch, explore neighborhoods, departure</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-section">
-                <h3>BUDGET BREAKDOWN</h3>
-                <p><strong>Lodging:</strong> $390-540 (Franklin or Nashville 3 nights)<br>
-                <strong>Food:</strong> $180-230 (great dining scene)<br>
-                <strong>Activities:</strong> $60-100 (museum, shows, parking)<br>
-                <strong>Gas:</strong> ~$45 round trip<br>
-                <span style="color: #ffbf00; font-size: 1.1em;"><strong>TOTAL: $675-915</strong></span></p>
-            </div>
-
-            <button class="btn" onclick="goToScreen(16)">SELECT THIS DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 16: Final Decision -->
-    <div id="screen16" class="screen">
+    <!-- Screen 6: Winter - Chattanooga -->
+    <div id="screen6" class="screen">
         <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
         <div class="destination-page">
             <div class="classified-header">
@@ -1226,128 +622,8 @@
                 <p style="margin-top: 10px;"><span class="detail-label">BUDGET:</span> $550-710 total (MOST AFFORDABLE!)</p>
             </div>
 
-            <button class="btn" onclick="goToScreen(8)">SELECT A SPRING DESTINATION</button>
-        </div>
-    </div>
-
-    <!-- Screen 16: Final Decision -->
-    <div id="screen16" class="screen">
-        <button class="back-btn" onclick="goToScreen(3)">← SEASONS</button>
-        <div class="classified-header">
-            <h2>MISSION DECISION</h2>
-            <p class="subtitle">/// AWAITING CONFIRMATION ///</p>
-        </div>
-        <div class="content-box">
-            <p class="mission-text" style="text-align: center; font-size: 1.2em;">
-                You have reviewed all available intelligence, Agent.
-            </p>
-            <p class="mission-text" style="text-align: center;">
-                The final decision is yours. Choose the destination that calls to you, and we will execute this mission together.
-            </p>
-            <p style="text-align: center; color: #888; margin-top: 20px;">
-                Remember: There are no wrong choices, only adventures waiting to happen.
-            </p>
-        </div>
-        <button class="btn" onclick="acceptMission()">ACCEPT MISSION</button>
-        <div id="finalMessage" class="final-message">
-            <h2>MISSION ACCEPTED!</h2>
-            <p style="font-size: 1.1em; margin-top: 15px;">
-                Excellent work, Agent. Your decision has been logged and the operation is now in motion.
-            </p>
-            <p style="color: #ffbf00; margin-top: 20px; font-size: 1.2em;">
-                Let's make some unforgettable memories together! ❤️
-            </p>
-            <p style="color: #888; margin-top: 20px; font-size: 0.9em;">
-                /// THIS MESSAGE WILL SELF-DESTRUCT... NEVER ///
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // Matrix Rain Effect
-        const canvas = document.getElementById('matrixCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const drops = [];
-
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.random() * -100;
-        }
-
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#00ff41';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        let matrixInterval;
-
-        function goToScreen(screenNumber) {
-            const screens = document.querySelectorAll('.screen');
-            screens.forEach(screen => {
-                screen.classList.remove('active');
-                screen.style.display = 'none';
-            });
-            
-            // Handle decimal screen numbers by converting to string
-            const screenId = 'screen' + String(screenNumber);
-            const targetScreen = document.getElementById(screenId);
-            
-            if (targetScreen) {
-                targetScreen.classList.add('active');
-                targetScreen.style.display = 'flex';
-            } else {
-                console.error('Screen not found:', screenId);
-            }
-            
-            // Activate matrix only on screen 1
-            if (screenNumber === 1) {
-                canvas.classList.add('active');
-                if (!matrixInterval) {
-                    matrixInterval = setInterval(drawMatrix, 33);
-                }
-            } else {
-                canvas.classList.remove('active');
-            }
-            
-            window.scrollTo(0, 0);
-        }
-
-        function acceptMission() {
-            const message = document.getElementById('finalMessage');
-            message.classList.add('show');
-        }
-
-        // Start matrix on load
-        window.addEventListener('load', () => {
-            matrixInterval = setInterval(drawMatrix, 33);
-            setTimeout(() => {
-                canvas.classList.add('active');
-            }, 500);
-        });
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
-</body>
-</html>
+            <div class="itinerary-section">
+                <p class="detail-label">SAMPLE SPRING MOUNTAIN ITINERARY:</p>
+                <div class="itinerary-option">
+                    <img src="https://picsum.photos/seed/mountain1/400/300" alt="Arrival" class="option-image">
+                    <div class="option-details">
