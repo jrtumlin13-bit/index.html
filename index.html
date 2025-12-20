@@ -89,9 +89,12 @@
         /* Season Grid */
         .season-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin: 40px 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .season-card {
@@ -146,6 +149,12 @@
             color: #fff;
             font-size: 1.5em;
             margin-bottom: 10px;
+        }
+
+        .destination-item .code-name {
+            color: #888;
+            font-size: 0.95em;
+            margin-top: 5px;
         }
 
         .destination-item .subtitle {
@@ -264,10 +273,32 @@
             display: inline-block;
             background: #2a4a2a;
             color: #7cfc00;
-            padding: 5px 15px;
-            font-size: 0.85em;
-            margin: 10px 0;
+            padding: 8px 20px;
+            font-size: 1em;
+            margin: 20px 0;
             border-radius: 3px;
+            letter-spacing: 1px;
+        }
+
+        .agent-allocation {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #1a1a1a;
+            border: 2px solid #2a4a2a;
+        }
+
+        .agent-allocation h3 {
+            color: #7cfc00;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .agent-allocation p {
+            color: #ccc;
+            font-size: 0.9em;
         }
 
         /* Responsive */
@@ -348,6 +379,12 @@
                 <h2>Operation: Getaway</h2>
                 <p style="margin: 30px 0; font-size: 1.1em;">This briefing contains classified vacation intelligence.</p>
                 <p style="margin: 30px 0;">You have been selected for a series of covert operations designed for rest, romance, and reconnaissance of Alabama's finest destinations.</p>
+                
+                <div class="agent-allocation">
+                    <h3>Agent Allocation</h3>
+                    <p>Approved Budget: $800 per mission</p>
+                </div>
+                
                 <button class="decrypt-btn" onclick="showSeasonSelect()" style="margin-top: 40px;">▶ AUTHORIZATION GRANTED - BEGIN BRIEFING</button>
             </div>
         </div>
@@ -361,6 +398,8 @@
                 <h1>Select Deployment Season</h1>
                 <p>Choose your tactical window</p>
             </div>
+
+            <button class="back-btn" onclick="showIntro()">← Back to Briefing</button>
 
             <div class="season-grid">
                 <div class="season-card" onclick="showSeasonScreen('spring')">
@@ -399,11 +438,13 @@
             <div class="destination-list">
                 <div class="destination-item" onclick="showMission('spring', 'chattanooga')">
                     <div class="subtitle">Mission File #001</div>
-                    <h3>Chattanooga, Tennessee</h3>
+                    <h3>River City Reconnaissance</h3>
+                    <div class="code-name">Target: Chattanooga, Tennessee</div>
                 </div>
                 <div class="destination-item" onclick="showMission('spring', 'blueridge')">
                     <div class="subtitle">Mission File #002</div>
-                    <h3>Blue Ridge, Georgia</h3>
+                    <h3>Mountain Pass Operation</h3>
+                    <div class="code-name">Target: Blue Ridge, Georgia</div>
                 </div>
             </div>
         </div>
@@ -425,11 +466,13 @@
             <div class="destination-list">
                 <div class="destination-item" onclick="showMission('summer', 'gulfshores')">
                     <div class="subtitle">Mission File #003</div>
-                    <h3>Gulf Shores, Alabama</h3>
+                    <h3>Coastal Infiltration</h3>
+                    <div class="code-name">Target: Gulf Shores, Alabama</div>
                 </div>
                 <div class="destination-item" onclick="showMission('summer', 'fairhope')">
                     <div class="subtitle">Mission File #004</div>
-                    <h3>Fairhope, Alabama</h3>
+                    <h3>Bayside Deployment</h3>
+                    <div class="code-name">Target: Fairhope, Alabama</div>
                 </div>
             </div>
         </div>
@@ -451,11 +494,13 @@
             <div class="destination-list">
                 <div class="destination-item" onclick="showMission('fall', 'gatlinburg')">
                     <div class="subtitle">Mission File #005</div>
-                    <h3>Gatlinburg / Pigeon Forge, Tennessee</h3>
+                    <h3>Smoky Mountain Ascent</h3>
+                    <div class="code-name">Target: Gatlinburg / Pigeon Forge, Tennessee</div>
                 </div>
                 <div class="destination-item" onclick="showMission('fall', 'helen')">
                     <div class="subtitle">Mission File #006</div>
-                    <h3>Helen, Georgia</h3>
+                    <h3>Alpine Village Survey</h3>
+                    <div class="code-name">Target: Helen, Georgia</div>
                 </div>
             </div>
         </div>
@@ -477,11 +522,13 @@
             <div class="destination-list">
                 <div class="destination-item" onclick="showMission('winter', 'mentone')">
                     <div class="subtitle">Mission File #007</div>
-                    <h3>Mentone, Alabama</h3>
+                    <h3>Highland Retreat</h3>
+                    <div class="code-name">Target: Mentone, Alabama</div>
                 </div>
                 <div class="destination-item" onclick="showMission('winter', 'franklin')">
                     <div class="subtitle">Mission File #008</div>
-                    <h3>Franklin / Nashville, Tennessee</h3>
+                    <h3>Music City Expedition</h3>
+                    <div class="code-name">Target: Franklin / Nashville, Tennessee</div>
                 </div>
             </div>
         </div>
@@ -500,12 +547,12 @@
 
             <div class="mission-file">
                 <!-- IMAGE: Replace URL below -->
-                <img src="data:image/jpeg;base64,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" alt="Chattanooga" class="mission-image">
+                <img src="https://placehold.co/900x300/1a1a1a/c41e3a?text=CHATTANOOGA+WATERFRONT+IMAGE" alt="Chattanooga" class="mission-image">
 
                 <h2>Mission Overview</h2>
                 <p>Chattanooga delivers a perfect spring escape with mild temperatures, blooming landscapes, and the iconic Tennessee River winding through downtown. This mission combines outdoor adventure with world-class attractions, all within a 2-hour drive from Birmingham.</p>
                 
-                <div class="budget-tag">TARGET BUDGET: ~$800</div>
+                <div class="budget-tag">AGENT ALLOCATION: $800</div>
 
                 <h3>Why Spring?</h3>
                 <p>Spring (March-May) brings perfect hiking weather, fewer crowds than summer, and the city comes alive with outdoor festivals. The Riverwalk and Lookout Mountain are spectacular with spring blooms.</p>
@@ -527,7 +574,7 @@
 
                 <h3>Food Intelligence</h3>
                 <!-- IMAGE: Replace URL below -->
-                <img src="https://via.placeholder.com/900x300/1a1a1a/7cfc00?text=Chattanooga+Food+Scene" alt="Chattanooga Food" class="mission-image">
+                <img src="https://placehold.co/900x300/1a1a1a/7cfc00?text=CHATTANOOGA+FOOD+SCENE+IMAGE" alt="Chattanooga Food" class="mission-image">
                 <ul>
                     <li><strong>Tupelo Honey:</strong> Southern comfort food with upscale twist (shrimp & grits, fried chicken)</li>
                     <li><strong>St. John's Restaurant:</strong> Fine dining in a historic meeting house</li>
@@ -563,12 +610,12 @@
 
             <div class="mission-file">
                 <!-- IMAGE: Replace URL below -->
-                <img src="https://via.placeholder.com/900x300/1a1a1a/c41e3a?text=Blue+Ridge+Mountains" alt="Blue Ridge" class="mission-image">
+                <img src="https://placehold.co/900x300/1a1a1a/c41e3a?text=BLUE+RIDGE+MOUNTAINS+IMAGE" alt="Blue Ridge" class="mission-image">
 
                 <h2>Mission Overview</h2>
                 <p>Blue Ridge is a charming mountain town offering a cozy, romantic escape. Known for its scenic railway, hiking trails, and quaint downtown, this mission is perfect for couples seeking relaxation and natural beauty just 2.5 hours from Birmingham.</p>
                 
-                <div class="budget-tag">TARGET BUDGET: ~$800</div>
+                <div class="budget-tag">AGENT ALLOCATION: $800</div>
 
                 <h3>Why Spring?</h3>
                 <p>Spring brings wildflowers, rushing waterfalls at peak flow, and pleasant hiking temperatures. The town is less crowded than fall, and cabin rentals offer mid-week discounts.</p>
@@ -590,7 +637,7 @@
 
                 <h3>Food Intelligence</h3>
                 <!-- IMAGE: Replace URL below -->
-                <img src="https://via.placeholder.com/900x300/1a1a1a/7cfc00?text=Blue+Ridge+Dining" alt="Blue Ridge Food" class="mission-image">
+                <img src="https://placehold.co/900x300/1a1a1a/7cfc00?text=BLUE+RIDGE+DINING+IMAGE" alt="Blue Ridge Food" class="mission-image">
                 <ul>
                     <li><strong>Harvest on Main:</strong> Farm-to-table Southern cuisine, rotating seasonal menu</li>
                     <li><strong>Treo's Pasta Kitchen:</strong> Homemade pasta, intimate Italian spot</li>
