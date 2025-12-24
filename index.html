@@ -624,71 +624,6 @@
 <body>
 
     <script>
-                        // Money collection system
-const collectedMoney = {};
-
-function collectMoney(amount, moneyId) {
-    // Check if already collected
-    if (collectedMoney[moneyId]) {
-        return;
-    }
-
-    // Mark as collected
-    collectedMoney[moneyId] = amount;
-
-    // Update display
-    updateMoneyDisplay();
-
-    // Mark the clicked element as collected
-    const clickedElement = document.querySelector(`[data-money-id="${moneyId}"]`);
-    if (clickedElement) {
-        clickedElement.classList.add('collected');
-        const originalText = clickedElement.innerHTML;
-        clickedElement.innerHTML = '✓ COLLECTED<br>' + originalText.split('💵')[1];
-    }
-}
-
-function updateMoneyDisplay() {
-    // Auto-update budget if already revealed
-    const totalBudgetSpan = document.getElementById('totalBudget');
-    const budgetReveal = document.getElementById('budgetReveal');
-    
-    if (totalBudgetSpan && budgetReveal && budgetReveal.style.display === 'block') {
-        let total = 800;
-        for (let id in collectedMoney) {
-            total += collectedMoney[id];
-        }
-        totalBudgetSpan.textContent = total;
-    }
-}
-
-function revealBudget() {
-    const revealText = document.getElementById('budgetReveal');
-    const totalBudgetSpan = document.getElementById('totalBudget');
-    
-    if (revealText && totalBudgetSpan) {
-        revealText.style.display = 'block';
-        
-        // Calculate total: base $0 + all collected bonus funds
-        let total = 0;
-        for (let id in collectedMoney) {
-            total += collectedMoney[id];
-        }
-        
-        totalBudgetSpan.textContent = total;
-    }
-}
-
-function loadMoneyProgress() {
-    // Mark collected money on current page
-    document.querySelectorAll('.hidden-money').forEach(el => {
-        const moneyId = el.getAttribute('data-money-id');
-        if (collectedMoney[moneyId]) {
-            el.classList.add('collected');
-            el.innerHTML = '✓ COLLECTED<br>' + el.innerHTML.split('💵')[1];
-        }
-    });
-}
         // Navigation system
         let currentSeason = '';
 
@@ -702,9 +637,6 @@ function loadMoneyProgress() {
             if (targetScreen) {
                 targetScreen.classList.add('active');
                 window.scrollTo(0, 0);
-        
-        // Load money progress for this screen
-        loadMoneyProgress();
             }
         }
 
@@ -820,12 +752,12 @@ function loadMoneyProgress() {
                 <p style="margin: 30px 0; font-size: 1.1em;">This briefing contains classified getaway intelligence.</p>
                 <p style="margin: 30px 0;">You have been selected for a series of covert operations designed for recon, rest, and romance of the South-East's finest destinations.</p>
                 
-            <div class="agent-allocation" style="cursor: pointer;" onclick="revealBudget()">
-    <h3>Agent Allocation</h3>
-    <p id="budgetReveal" style="display: none;">Approved Budget: $<span id="totalBudget"></span> per mission</p>
-    <p id="budgetHidden" style="color: #888; font-size: 0.85em;"></p>
-</div> 
-
+              <div class="agent-allocation">
+    <h3>💰 Current Mission Budget</h3>
+    <p style="font-size: 1.4em; margin-top: 10px;">$<span id="budgetDisplay">800</span></p>
+    <p style="font-size: 0.9em; margin-top: 10px; color: #888;">Find hidden funds throughout your missions to increase your budget!</p>
+</div>
+                
                 <button class="decrypt-btn" onclick="showSeasonSelect()" style="margin-top: 40px;">▶ AUTHORIZATION GRANTED - BEGIN BRIEFING</button>
             </div>
         </div>
@@ -1288,11 +1220,6 @@ function loadMoneyProgress() {
 
                 <h3>Spa Options</h3>
                 <p>The Edwin Hotel features a spa with massage services. Alternatively, Woodhouse Day Spa downtown offers full spa packages including couples massages.</p>
-
-              <div class="hidden-money" data-money-id="ID1" onclick="collectMoney(50, 'ID1')">
-            💵 HIDDEN FUNDS: $100
-        </div>
-        <div class</parameter>
             </div>
         </div>
     </div>
