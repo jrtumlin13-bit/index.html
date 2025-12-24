@@ -805,8 +805,8 @@ function revealBudget() {
     if (revealText && totalBudgetSpan) {
         revealText.style.display = 'block';
         
-        // Calculate total: base $800 + all collected bonus funds
-        let total = 800;
+        // Calculate total: base $0 + all collected bonus funds
+        let total = 1000;
         for (let id in collectedMoney) {
             total += collectedMoney[id];
         }
