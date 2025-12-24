@@ -752,10 +752,10 @@
                 <p style="margin: 30px 0; font-size: 1.1em;">This briefing contains classified getaway intelligence.</p>
                 <p style="margin: 30px 0;">You have been selected for a series of covert operations designed for recon, rest, and romance of the South-East's finest destinations.</p>
                 
-              <div class="agent-allocation">
-    <h3>💰 Current Mission Budget</h3>
-    <p style="font-size: 1.4em; margin-top: 10px;">$<span id="budgetDisplay">800</span></p>
-    <p style="font-size: 0.9em; margin-top: 10px; color: #888;">Find hidden funds throughout your missions to increase your budget!</p>
+            <div class="agent-allocation" style="cursor: pointer;" onclick="revealBudget()">
+    <h3>Agent Allocation</h3>
+    <p id="budgetReveal" style="display: none;">Approved Budget: $<span id="totalBudget">800</span> per mission</p>
+    <p id="budgetHidden" style="color: #888; font-size: 0.85em;">▶ Click to decrypt allocation details</p>
 </div>
                 
                 <button class="decrypt-btn" onclick="showSeasonSelect()" style="margin-top: 40px;">▶ AUTHORIZATION GRANTED - BEGIN BRIEFING</button>
